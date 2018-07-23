@@ -1,0 +1,22 @@
+install.packages("pdftools") # To read the pdf file
+install.packages("quanteda") # To extract keywords
+library(pdftools)
+library(quanteda)
+extract<- pdf_text(file.choose()) # To choose file from any path
+View(extract) # view the document
+kw<- kwic(extract,"inheritance") # extract only the inheritance keyword
+kw
+summary(corpus(kw))
+nchar(summary(corpus(kw)))
+kw<- kwic(extract,"encapsulation") # extract encapsulation keyword
+kw
+summary(corpus(kw))
+nchar(summary(corpus(kw)))
+kw<- kwic(extract,"multithreading") # extract multithreading keyword
+kw
+summary(corpus(kw))
+nchar(summary(corpus(kw)))
+kw<- kwic(extract,"effect") # extract applets keyword
+kw
+summary(corpus(kw))
+nchar(summary(corpus(kw)))
